@@ -1,0 +1,30 @@
+{
+  "name": "my-test-package-super",
+  "version": "0.1.5",
+  "description": "A template for writing NPM packages.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --presets env src -d ./ --ignore src/index.test.js",
+    "dev": "babel --presets env src -d ./ --watch --ignore src/index.test.js",
+    "test": "jest --watch"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "template"
+  ],
+  "author": "ante kotarac",
+  "license": "MIT",
+  "dependencies": {
+    "jwt-decode": "^2.2.0"
+  },
+  "peerDependencies": {
+    "jwt-decode": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.3"
+  }
+}

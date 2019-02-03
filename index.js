@@ -5,6 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.authCheckDecorator = undefined;
 
-var _auth = require('./lib/auth');
+var _authcheckdecorator = require('./lib/authcheckdecorator');
 
-exports.authCheckDecorator = _auth.authCheckDecorator;
+exports.authCheckDecorator = _authcheckdecorator.authCheckDecorator;

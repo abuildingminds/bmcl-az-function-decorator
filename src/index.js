@@ -1,4 +1,4 @@
-import { authCheckDecorator } from './lib/auth';
+import { authCheckDecorator } from './lib/authcheckdecorator';
 
 export {
     authCheckDecorator

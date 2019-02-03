@@ -1,0 +1,14 @@
+{
+   "extends": [
+    "tslint-config-prettier",
+    "backend-tslint-rules",
+    "tslint-clean-code",
+    "tslint-consistent-codestyle",
+    "tslint-sonarts"
+  ],
+  "rules": {
+    "no-invalid-this": false,
+    "only-arrow-functions": false,
+    "no-string-literal": false
+  }
+ }

@@ -1,5 +1,3 @@
 import { authCheckDecorator } from './lib/authcheckdecorator';
 
-export {
-    authCheckDecorator
-};
+export { authCheckDecorator };

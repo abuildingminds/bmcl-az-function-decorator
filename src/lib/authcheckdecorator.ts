@@ -4,10 +4,10 @@ export const authCheckDecorator = (wrapped: any): any => function(...args: Array
     const [context, req] = args;
     const { authorization } = req.headers;
 
-    const tokenDecoded = JWT(authorization.split(' ')[1]);
-    context.log(tokenDecoded);
+    const tokenDecoded: string = JWT(authorization.split(' ')[1]);
+    context.log(JSON.parse(tokenDecoded));
 
-    context.log(process.env['userRoles']);
+    context.log(`env var userRoles =  ${process.env['userRoles']}`);
 
     context.log('Started wrapping');
     wrapped.apply(undefined, arguments);

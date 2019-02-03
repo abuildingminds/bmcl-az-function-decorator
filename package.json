@@ -1,6 +1,6 @@
 {
   "name": "bmcl-az-function-decorator",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Buildingminds azure function decorator",
   "main": "lib/index.js",
   "scripts": {

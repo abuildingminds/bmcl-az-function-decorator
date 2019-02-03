@@ -1,15 +1,22 @@
 import * as JWT from 'jwt-decode';
 
 export const authCheckDecorator = (wrapped: any): any => function(...args: Array<any>): void {
-    const [context, req] = args;
+    const req  = args[1];
     const { authorization } = req.headers;
 
-    const tokenDecoded: string = JWT(authorization.split(' ')[1]);
-    context.log(JSON.parse(tokenDecoded));
+    const tokenDecoded: any = JWT(authorization.split(' ')[1]);
 
-    context.log(`env var userRoles =  ${process.env['userRoles']}`);
+    if (authorisationFailure(tokenDecoded.userRoles)) {
+        throw new Error('User is not authorized to execute this function !!');
+    }
 
-    context.log('Started wrapping');
     wrapped.apply(undefined, arguments);
-    context.log('Ended wrapping');
 };
+
+function authorisationFailure(userRoles: string): boolean {
+    if (!userRoles) {
+        return true;
+    }
+
+    return false;
+}
